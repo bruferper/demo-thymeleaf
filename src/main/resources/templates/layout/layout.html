@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+    <head>
+        <meta charset="UTF-8">
+        <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Thymeleaf Demo</title>
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+        <script th:src="@{/js/bootstrap.bundle.min.js}" defer></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initialscale=1"/>
+    </head>
+    <body class="bg-light bg-gradient">
+        <div class="container">
+            <!-- Menu -->
+            <div class="row">
+                <div class="col p-0 m-0">
+                    <div th:replace="~{fragment/navbar}"></div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="row bg-white mt-3">
+                <div class="col p-3">
+                    <div layout:fragment="page-content"></div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="row my-3">
+                <div class="col text-center">
+                    BFz!
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

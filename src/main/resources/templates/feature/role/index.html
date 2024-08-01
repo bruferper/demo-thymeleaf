@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout/layout}"
+>
+    <head>
+        <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Dashboard</title>
+    </head>
+    <body>
+        <div layout:fragment="page-content">
+            <div class="row">
+                <div class="col">
+                    <h3>Roles</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <table class="table table-hover">
+                        <thead>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Actions</th>
+                        </thead>
+                        <tbody>
+                            <tr th:each="role : ${roles}">
+                                <td th:text="${role.id}">Id</td>
+                                <td th:text="${role.name}">Name</td>
+                                <td>
+                                    <button class="btn btn-primary">Edit</button>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row" th:if="${pageInfo.totalPages > 1}">
+                <div class="col">
+                    <div th:replace="~{fragment/pagination(pageInfo=${pageInfo})}"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

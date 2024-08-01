@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout/layout}"
+>
+    <head>
+        <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Dashboard</title>
+    </head>
+    <body>
+    <div layout:fragment="page-content">
+        <div>Main content of the page goes here</div>
+    </div>
+</body>
